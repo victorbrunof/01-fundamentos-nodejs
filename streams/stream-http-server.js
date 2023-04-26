@@ -12,14 +12,7 @@ class InverseNumberStream extends Transform {
 }
 
 const server = http.createServer(async (req, res) => {
-    const buffers = []
-
-    // Percorrer cada pedaço de dado que chega
-    for await (const chunk of req) {
-        buffers.push(chunk)
-    }
-
-    const fullStreamContent = Buffer.concat(buffers).toString()
+    
 
     console.log(fullStreamContent)
 
